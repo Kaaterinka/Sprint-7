@@ -1,11 +1,11 @@
 --liquibase formatted sql
 
---changeset rrmasgutov:init
+--changeset bolotina:init
 
 create table account1
 (
     id bigserial constraint account_pk primary key,
-    amount int,
+    amount int constraint realAmount CHECK (amount>=0),
     version int
 );
 
